@@ -82,7 +82,7 @@
                             <p>ManTarYudh Hospital has emerged as Asia’s foremost integrated healthcare services provider and
                                  has a robust presence across the healthcare ecosystem, including Hospitals, Pharmacies, Primary Care
                                   & Diagnostic Clinics and several retail health models. </p>
-                            <a href="#" class="btn_2">Make an appointment</a>
+                            <a href="#appointment" class="btn_2">Make an appointment</a>
 
                         </div>
                     </div>
@@ -159,51 +159,48 @@
 
     
     <!--::regervation_part start::-->
-    <section class="regervation_part section_padding">
+    <section id="appointment" class="regervation_part section_padding">
         <div class="container">
             <div class="row align-items-center regervation_content">
                 <div class="col-lg-7">
                     <div class="regervation_part_iner">
-                        <form>
+                        <form action="insert.php" method="POST">
                             <h2>Make an Appointment</h2>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <input type="email" class="form-control" id="inputEmail4" placeholder="Name">
+                                    <input type="text" name="name" class="form-control" id="inputEmail4" placeholder="Name" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <input type="password" class="form-control" id="inputPassword4"
-                                        placeholder="Email address">
+                                    <input type="email" name="email" class="form-control" id="inputPassword4"
+                                        placeholder="Email address" required>
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <select class="form-control" id="Select">
-                                        <option value="1" selected>Select service</option>
-                                        <option value="2">Neurologist</option>
-                                        <option value="3">Gynecologist</option>
-                                        <option value="4">Urologist</option>
-                                        <option value="5">Gastroenterologist</option>
-                                        <option value="6">Cardiologist</option>
+                                    <select name="service" class="form-control" id="Select" required>
+                                        <option selected hidden value="">Select service</option>
+                                        <option value="Neurologist">Neurologist</option>
+                                        <option value="Gynecologist">Gynecologist</option>
+                                        <option value="Urologist">Urologist</option>
+                                        <option value="Gastroenterologist">Gastroenterologist</option>
+                                        <option value="Cardiologist">Cardiologist</option>
                                     </select>
                                 </div>
-                                <div class="form-group time_icon col-md-6">
-                                    <select class="form-control" id="Select2">
-                                        <option value="" selected>Time</option>
-                                        <option value="1">8 AM TO 10AM</option>
-                                        <option value="1">10 AM TO 12PM</option>
-                                        <option value="1">12PM TO 2PM</option>
-                                        <option value="1">2PM TO 4PM</option>
-                                        <option value="1">4PM TO 6PM</option>
-                                        <option value="1">6PM TO 8PM</option>
-                                        <option value="1">4PM TO 10PM</option>
-                                        <option value="1">10PM TO 12PM</option>
+                                <div class="form-group time_icon col-md-6" required>
+                                    <select name="time" class="form-control" id="Select2">
+                                        <option value="" hidden selected>Time</option>
+                                        <option value="8 AM TO 10AM">8 AM TO 10AM</option>
+                                        <option value="10 AM TO 12PM">10 AM TO 12PM</option>
+                                        <option value="12PM TO 2PM">12PM TO 2PM</option>
+                                        <option value="2PM TO 4PM">2PM TO 4PM</option>
+                                        <option value="4PM TO 6PM">4PM TO 6PM</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-12">
-                                    <textarea class="form-control" id="Textarea" rows="4"
-                                        placeholder="Your Note "></textarea>
+                                    <textarea name="note" class="form-control" id="Textarea" rows="4"
+                                        placeholder="Your Note " required></textarea>
                                 </div>
                             </div>
                             <div class="regerv_btn">
-                                <a href="#" class="btn_2">Make an Appointment</a>
+                                <input type="submit" style="background-color:blueviolet" value="Make an Appointment">
                             </div>
                         </form>
                     </div>
